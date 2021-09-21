@@ -29,7 +29,7 @@ object RXJavaTasks {
      */
     fun task2(): Observable<String> {
         val mList = listOf("A", "B", "C", "C", "D", "B", "E")
-        return Observable.fromIterable(mList)
+        return Observable.fromIterable(mList).distinct()
             .zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
     }
 
